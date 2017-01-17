@@ -1,0 +1,39 @@
+LeagueRM
+Input:	region, summonerName, championName, APIKey
+Output:	Last 5 rune pages used on Champion by Summoner
+
+The reason the program is called LeagueRM is because I was originally
+going to do Runes&Masteries. I have decided not to do Masteries at this
+time as it would look hideous with a text UI. I might change my mind
+in the future, so I have decided to keep the name LeagueRM.
+
+Riot limits how many API calls you can use. This program uses 7 in
+quick succession. This can often leads to problems, simply retrying
+the program after a short delay usually gets around these issues.
+
+Below is what I used the RIOT API calls for.
+
+# requestSummonerData [1x]
+summoner-v1.4
+INPUT:	region, summonerName
+OUTPUT: summonerId
+
+# requestChampionData [1x] - NO LIMIT
+lol-static-data-v1.2
+INPUT:	championName
+OUTPUT:	championId
+
+# requestChampionHistory [1x]
+matchlist-v2.2
+INPUT:	summonerId, region, championId
+ONTPUT:	matchIds
+
+# requestGameMatch [5x]
+match-v2.2
+INPUT:	region, matchId
+OUTPUT:	rank, runeId
+
+# requestRuneData [VARIESx] - NO LIMIT
+lol-static-data-v1.2
+INPUT:	runeId
+OUTPUT:	runeName
