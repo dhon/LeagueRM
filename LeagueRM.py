@@ -80,7 +80,7 @@ def getRunes(MatchJSON, PID, APIKey):
 def main():
     # Introduction
     print("Hello! This is my program. It returns the last 5 rune pages a summoner")
-    print("has used on a particular champion. Example regions are: NA, KR, EUW.")
+    print("has used on a particular champion. Allowed regions are: NA, KR, EUW.")
     print("DO NOT PUT SPACES ANYWHERE BELOW, even for summoner / champion names.")
     print("Champion names MUST start with a capital letter and then lowercase letters.")
     print("Here is the list of exceptions: AurelionSol, Chogath, DrMundo, FiddleSticks,")
@@ -92,6 +92,9 @@ def main():
     summonerName = (str)(input('Summoner Name: ')).lower()
     championName = (str)(input('Champion Name: '))
     APIKey = (str)(input('Riot API Key: '))
+    if(region != 'na' and region != 'euw' and region != 'kr'):
+        print('Invalid region')
+        sys.exit(1)
 
     # Look up Summoner ID
     SID = requestSummonerID(region, summonerName, APIKey)
