@@ -91,7 +91,7 @@ def main():
     region = (str)(input('Region: ')).lower()
     summonerName = (str)(input('Summoner Name: ')).lower()
     championName = (str)(input('Champion Name: '))
-    APIKey = (str)(input('Type in your API Key here: '))
+    APIKey = (str)(input('Riot API Key: '))
 
     # Look up Summoner ID
     SID = requestSummonerID(region, summonerName, APIKey)
