@@ -1,4 +1,4 @@
-# Python v3. must "pip install requests"
+# Python v3. must cmd "pip install requests"
 import requests # allows easy use of JSONs from API
 import sys # allows closing of program in try/except
 
