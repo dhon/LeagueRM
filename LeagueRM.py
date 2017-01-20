@@ -63,7 +63,7 @@ def requestRuneData(runeId, APIKey):
     JSON = requests.get(URL).json() # Gets the JSON File
     return str(JSON['name']) # Return Rune Name
 
-def getParticipantIdentity(MatchJSON, SID):
+def getParticipantID(MatchJSON, SID):
     for i in range(10):
         if(MatchJSON['participantIdentities'][i]['player']['summonerId'] == int(SID)):
             PID = MatchJSON['participantIdentities'][i]['participantId']
@@ -111,7 +111,7 @@ def main():
     # Save the 5 participant IDs
     PID = []
     for i in range(5):
-        temp = getParticipantIdentity(MatchJSON[i], SID)
+        temp = getParticipantID(MatchJSON[i], SID)
         PID.append(temp)
 
     # Print the runes used in the matches
