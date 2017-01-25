@@ -2,6 +2,8 @@ LeagueRM
 Input:	region, summonerName, championName, APIKey
 Output:	Last 5 rune pages used on Champion by Summoner
 
+The output goes to the CMD and SQLite database file named LeagueDB
+
 The reason the program is called LeagueRM is because I was originally
 going to do Runes&Masteries. I have decided not to do Masteries at this
 time as it would look hideous with a text UI. I might change my mind
