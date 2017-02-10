@@ -3,6 +3,10 @@ import requests # allows easy use of JSONs from API
 import sys # allows closing of program in try/except
 import sqlite3 # database
 
+# Connect to database
+conn = sqlite3.connect('LeagueDB.db')
+c = conn.cursor()
+
 # summoner-v1.4
 def requestSummonerID(region, summonerName, APIKey):
     URL = "https://" + region + ".api.pvp.net/api/lol/" + region + "/v1.4/summoner/by-name/" + summonerName + "?api_key=" + APIKey
@@ -190,8 +194,6 @@ def main():
 
 # Start
 create_table()
-conn = sqlite3.connect('LeagueDB.db')
-c = conn.cursor()
 main()
 c.close()
 conn.close()
