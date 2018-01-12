@@ -1,3 +1,6 @@
+DEPRECIATED: League of Legends has changed their Runes
+system so this program will no longer work as of 2018.
+
 LeagueRM
 Input:	region, summonerName, championName, APIKey
 Output:	Last 5 rune pages used on Champion by Summoner
